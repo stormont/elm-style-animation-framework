@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1/EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Title</title>
+  </head>
+
+  <body>
+    <div id="my-app"></div>
+  </body>
+
+  <!-- Your source after making -->
+  <script type="text/javascript" src="elm.js"></script>
+
+  <!-- Removes splash and starts elm app. -->
+  <script type="text/javascript">
+    window.onload = function() {
+      var node = document.getElementById('my-app');
+
+      if (typeof Elm.Main !== 'undefined') {
+        var app = Elm.Main.init({node: node});
+      } else {
+        node.innerHTML = 'Elm.Main is not defined; did you compile the correct module?';
+      }
+    };
+  </script>
+
+</html>
